@@ -169,7 +169,7 @@ var cmsheet = (function() {
 				//TODO add more rows
 				return [
 					el.title.$t,
-					el.gsx$type
+					el.gsx$type.$t
 				]
 			})
 		}
@@ -187,7 +187,8 @@ var cmsheet = (function() {
 		_mutateDom(targetDoms,sheetData,onBeforeApplyEach,onAfterApplyEach){
 			let self = this
 			targetDoms.forEach(function(el,idx) {
-				idx = parseInt(el.dataset[self._cf.dataSetSelector.targetRowSpecify]) || idx
+				let specificRow = el.dataset[self._cf.dataSetSelector.targetRowSpecify]
+				idx = specificRow ? parseInt(specificRow)-2 : idx
 				// let el = targetDoms[idx]
 				let data = sheetData[idx][0]
 				let dataType = sheetData[idx][1]
@@ -240,7 +241,7 @@ var cmsheet = (function() {
 		}
 	}
 	let cmsheet = new Cmsheet();
-	return cmsheet;
+	return cmsheet.init();
 
 }());
 
