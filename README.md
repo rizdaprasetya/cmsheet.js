@@ -11,14 +11,14 @@ This JS library will make it easy for you to fetch GSheet content and replace co
 * Edit the content on the sheet as you wish, publish the sheet to web, **File > Publish to The Web > Publish**
 * On your web/html page add this script tag:
 ```html
+<script src="https://cdn.jsdelivr.net/gh/rizdaprasetya/cmsheet.js@master/cmsheet.html" data-cmsheet_autorun="1" cmsheet_gsheet_id="YOUR_GSHEET_ID"></script> 
+```
+> or use your own hosted version:
+```html
 <script src="cmsheet.js" data-cmsheet_autorun="1" cmsheet_gsheet_id="YOUR_GSHEET_ID"></script> 
 ```
 > Note: Download the cmsheet.js and edit the `src="./../cmsheet.js"` to point to where your cmsheet.js hosted.
 
-> or use this hosted version
-```html
-<script src="https://raw.githack.com/rizdaprasetya/cmsheet.js/master/cmsheet.js" data-cmsheet_autorun="1" cmsheet_gsheet_id="YOUR_GSHEET_ID"></script> 
-```
 * edit the `cmsheet_gsheet_id="YOUR_GSHEET_ID"` and input your GSheet ID
 * add this `data-cmsheet="1"` as attribute to html element you want the content to be replaced with. E.g:
 ```html
@@ -27,8 +27,9 @@ This JS library will make it easy for you to fetch GSheet content and replace co
 * Done! The cmsheet will auto run and replace the content of html element with that attribute
 
 ## Demo
-* [Simple HTML Demo](https://combinatronics.com/rizdaprasetya/cmsheet.js/master/demo/index.html) | [Alternative link](https://raw.githack.com/rizdaprasetya/cmsheet.js/master/demo/index.html) - Source: [here](https://github.com/rizdaprasetya/cmsheet.js/blob/master/demo/index.html)
-* [JSfiddle Demo](https://jsfiddle.net/raizerde/05euaqm4/1/embedded/result/)
+* [JSfiddle Demo](https://jsfiddle.net/raizerde/05euaqm4/embedded/result/)
+* [Simple HTML Demo](https://combinatronics.com/rizdaprasetya/cmsheet.js/master/demo/index.html) | [Alternative link](https://raw.githack.com/rizdaprasetya/cmsheet.js/master/demo/index.html) - Source: [/demo](https://github.com/rizdaprasetya/cmsheet.js/blob/master/demo/index.html)
+
 
 ## Optional
 To prevent autorun, you can set `data-cmsheet_autorun="0"` on the script tag to `0` (or remove the attribute).
@@ -56,12 +57,12 @@ cmsheet.init({
 ```
 
 * You can specify which row content to use for an element by adding `data-cmsheet_row="..."` attribute:
-```
+```html
 <p data-cmsheet="1" data-cmsheet_row="20"></p>
 ```
 
 * You can specify/override content type to use for an element by adding `data-cmsheet_type="..."` attribute:
-```
+```html
 <p data-cmsheet="1" data-cmsheet_type="html"></p>
 ```
 
