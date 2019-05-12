@@ -11,7 +11,7 @@ This JS library will make it easy for you to fetch GSheet content and replace co
 * Edit the content on the sheet as you wish, publish the sheet to web, **File > Publish to The Web > Publish**
 * On your web/html page add this script tag:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/rizdaprasetya/cmsheet.js@master/cmsheet.html" data-cmsheet_autorun="1" cmsheet_gsheet_id="YOUR_GSHEET_ID"></script> 
+<script src="https://cdn.jsdelivr.net/gh/rizdaprasetya/cmsheet.js@master/cmsheet.js" data-cmsheet_autorun="1" cmsheet_gsheet_id="YOUR_GSHEET_ID"></script> 
 ```
 > or use your own hosted version:
 ```html
