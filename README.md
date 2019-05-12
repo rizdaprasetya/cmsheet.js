@@ -30,6 +30,7 @@ This JS library will make it easy for you to fetch GSheet content and replace co
 * [JSfiddle Demo](https://jsfiddle.net/raizerde/05euaqm4/embedded/result/)
 * [Simple HTML Demo](https://combinatronics.com/rizdaprasetya/cmsheet.js/master/demo/index.html) | [Alternative link](https://raw.githack.com/rizdaprasetya/cmsheet.js/master/demo/index.html) - Source: [/demo](https://github.com/rizdaprasetya/cmsheet.js/blob/master/demo/index.html)
 
+
 ## Optional
 To prevent autorun, you can set `data-cmsheet_autorun="0"` on the script tag to `0` (or remove the attribute).
 And manually trigger the cmsheet with customizable options by:
