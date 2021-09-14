@@ -5,6 +5,10 @@ Do you know that Google Sheet content can be fetched via Javascript? given that,
 
 This JS library will make it easy for you to fetch GSheet content and replace content on your html pages by adding simple element attributes.
 
+## Demo
+* [JSfiddle Demo](https://jsfiddle.net/raizerde/05euaqm4/embedded/result/)
+* [Simple HTML Demo](https://combinatronics.com/rizdaprasetya/cmsheet.js/master/demo/index.html) | [Alternative link](https://raw.githack.com/rizdaprasetya/cmsheet.js/master/demo/index.html) - Source: [/demo](https://github.com/rizdaprasetya/cmsheet.js/blob/master/demo/index.html)
+
 ## Usage
 * Make a copy of this [GSheet](https://docs.google.com/spreadsheets/d/1BXathDx1leC5UG8FnSv-qvcDji7I0oD74Y2wX_mreY8/)
 * Take a note of the GSheet ID, from the url, for example Sheet id looks like this `1BXathDx1leC5UG8FnSv-qvcDji7I0oD74Y2wX_mreY8`
@@ -25,11 +29,6 @@ This JS library will make it easy for you to fetch GSheet content and replace co
 <p data-cmsheet="1">this text will be replaced</p>
 ```
 * Done! The cmsheet will auto run and replace the content of html element with that attribute
-
-## Demo
-* [JSfiddle Demo](https://jsfiddle.net/raizerde/05euaqm4/embedded/result/)
-* [Simple HTML Demo](https://combinatronics.com/rizdaprasetya/cmsheet.js/master/demo/index.html) | [Alternative link](https://raw.githack.com/rizdaprasetya/cmsheet.js/master/demo/index.html) - Source: [/demo](https://github.com/rizdaprasetya/cmsheet.js/blob/master/demo/index.html)
-
 
 ## Optional
 To prevent autorun, you can set `data-cmsheet_autorun="0"` on the script tag to `0` (or remove the attribute).
@@ -55,6 +54,7 @@ cmsheet.init({
   withGvizApi: 0
 })
 ```
+Note: all option attributes are optional. You can omit them if you want.
 
 * You can specify which row content to use for an element by adding `data-cmsheet_row="..."` attribute:
 ```html
