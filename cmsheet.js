@@ -63,13 +63,14 @@ var cmsheet = (function() {
 					onBeforeApplyEach: function(){},
 					onAfterApplyEach: function(){}
 				},
-				withGvizApi: 0
+				withGvizApi: 1
 			}
 			// config
 			this._cf = {
 				dataSetSelector: {
 					dataGsheetId: 'cmsheet_gsheet_id',
 					dataAutorun: 'cmsheet_autorun',
+					dataWithGvizApi: 'cmsheet_with_gviz_api',
 					dataAutoapply: 'cmsheet_autoapply',//TODO use this
 					targetMutateDom: 'cmsheet',
 					targetDataType: 'cmsheet_type',
@@ -102,7 +103,7 @@ var cmsheet = (function() {
 				link : function(el,data){ el.href=data; return { el:el, data:data } },
 				hide : function(el,data){ el.style='display:none;'; return { el:el, data:data } }
 			}
-			this.withGvizApi = false
+			this.withGvizApi = true
 		}
 		_generateGsheetUrl(){
 			return `${this._cf.gSheetApiBaseUrl}/${this.sheetId}/${this._cf.gSheetSheetId}/${this._cf.gSheetUrlSuffix}`
@@ -114,6 +115,13 @@ var cmsheet = (function() {
 			let autorun = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataAutorun)
 			if(Helper.isStringTruthy(autorun)){
 				return this.autorun = true
+			}
+			this.autorun = false
+		}
+		_setWithGvizApiFromDataSet(){
+			let autorun = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataWithGvizApi)
+			if(Helper.isStringTruthy(autorun)){
+				return this.withGvizApi = true
 			}
 			this.autorun = false
 		}
@@ -212,6 +220,9 @@ var cmsheet = (function() {
 			if(!options.autorun){ // TODO add for autoapply too?
 				this._setAutorunFromDataSet() 
 			}
+			if(!options.withGvizApi){
+				this._setWithGvizApiFromDataSet() 
+			}
 			if(options){
 				// merge options w/ attribute
 				let mergedOptions = Helper.deepMerge(this,options)
@@ -274,3 +285,8 @@ var cmsheet = (function() {
 // 	console.assert(cms.sheetId == '1wt1Nf5yV0ujRPf2wdGHm_Vj1QvbOsMvFCiNcw4Iw0Dw')
 // 	console.assert(cms.autorun == true)
 // }())
+
+/**
+ * @WARNING: Since Aug 2021, regular public sheet API v3 is deprecated. Which makes non-GvizApi stop working
+ * So `withGvizApi` is enabled by default, to avoid the issue.
+ */
