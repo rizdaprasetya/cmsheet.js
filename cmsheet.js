@@ -112,18 +112,14 @@ var cmsheet = (function() {
 			return this.sheetId = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataGsheetId)
 		}
 		_setAutorunFromDataSet(){
-			let autorun = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataAutorun)
-			if(Helper.isStringTruthy(autorun)){
-				return this.autorun = true
-			}
-			this.autorun = false
+			let autorunFromDataSet = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataAutorun)
+			if(autorunFromDataSet == null){ return null }
+			return this.autorun = Helper.isStringTruthy(autorunFromDataSet)
 		}
 		_setWithGvizApiFromDataSet(){
-			let autorun = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataWithGvizApi)
-			if(Helper.isStringTruthy(autorun)){
-				return this.withGvizApi = true
-			}
-			this.autorun = false
+			let withGvizApiFromDataSet = Helper.readValueFromDataSet(this._cf.dataSetSelector.dataWithGvizApi)
+			if(withGvizApiFromDataSet == null){ return null }
+			return this.withGvizApi = Helper.isStringTruthy(withGvizApiFromDataSet)
 		}
 		_generateGsheetUrlGviz(gvizQuery = ''){
 			return `https://docs.google.com/spreadsheets/d/${this.sheetId}/gviz/tq?gid=0&tq=${gvizQuery}&tqx=responseHandler:cmsheet.jsonpCallback`
