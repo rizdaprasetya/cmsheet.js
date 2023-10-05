@@ -1,5 +1,5 @@
 # cmsheet.js
-**cmsheet.js** is a simple JavaScript library to fetch Google Sheet content and replace web page content.
+**cmsheet.js** is a simple (FrontEnd-only) JavaScript library to fetch Google Sheet content and replace web page content.
 
 With cmsheet.js, you can use Google Sheets as a content management system for your web page. Simply add a few element attributes to your HTML pages to specify which Google Sheet content to fetch and where to display it.
 
